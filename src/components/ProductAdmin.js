@@ -40,14 +40,14 @@ export default class ProductAdmin extends Component {
     try {
       const baseUrl = config.api.invokeUrl;
       const intId = parseInt(id);
-      console.log(name)
+      console.log(intId)
       const params = {
         id: intId,
         metaCritic: "70%",
         movie: name,
         releaseYear: 2000,
       };
-      await axios.patch(`${baseUrl}/movies/{id}`, params);
+      await axios.patch(`${baseUrl}/movies/${intId}`, params);
       const productToUpdate = [...this.state.products].find(
         (product) => product.id === id
       );
